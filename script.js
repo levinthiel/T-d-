@@ -3,6 +3,7 @@ const form = document.querySelector("form");
 const todoList = document.querySelector("ul");
 const introimg = document.querySelector('[data-js="introimg"]');
 const clearlist = document.querySelector('[data-js="clearlistbutton"]');
+const motMSGli = document.querySelector('[data-js="newmotmsg"]');
 
 let toDoNumber = 0;
 
@@ -15,7 +16,13 @@ form.addEventListener("submit", (event) => {
 
     toDoNumber = toDoNumber + 1; //incrementation for number of todos
     event.preventDefault();
-
+    
+    console.log(motMSGli)
+    // if motivational message then remove it
+    if(motMSGli){
+        motMSGli.remove();
+    }
+    
 
     //Create the todo------------------------------------------------------------------------------------
     const newTodoLi = document.createElement("LI");
@@ -61,6 +68,9 @@ form.addEventListener("submit", (event) => {
 
     clearbutton.addEventListener("click", () => {
         todoLi.remove();
+        if (todoList.innerHTML.trim() === ""){
+            generatemotMSGs()
+        }
     });
 
     //Finish the todo------------------------------------------------------------------------------------
@@ -80,4 +90,18 @@ clearlist.addEventListener("click", () => {
     todoList.innerHTML="";
 });
 
+//Motivational message ------------------------------------------------------------------------------
+const motMSGs = [" Wow your list is empty! Good work Buddy","Wow such empty, so productive!","list done!" ]
 
+
+// generate Motivational messages --------------------------------------------------------------------
+function generatemotMSGs(){
+    let randommotmsg = motMSGs[Math.floor(Math.random() * motMSGs.length)];
+    const newmotmsg = document.createElement("LI");
+    newmotmsg.classList.add("motmsg");
+    newmotmsg.setAttribute('data-js', `newmotmsg`);
+    newmotmsg.innerHTML = `
+        <h2 >${randommotmsg}</h2>
+    `;
+    todoList.append(newmotmsg);
+}

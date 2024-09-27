@@ -137,6 +137,12 @@ li.todo-item-done {
     background-color:  var(--lightblack) !important;
     text-decoration-thickness: 5px;
 }
+.motmsg {
+    list-style: none;
+    list-style: none;
+    color: var(--pink);
+    text-align: center;
+}
 @media only screen and (max-width: 780px) {
     .formuptop {
         margin-top: 7rem;
