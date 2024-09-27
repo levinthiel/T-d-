@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>tödö</title>
+        <link rel="icon" type="png" href="./assets/fav.png">
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <header>
+            <h1 class="logo">tödö</h1>
+            <button class="clearall hidden" data-js="clearlistbutton">
+                Clear list
+            </button>
+        </header>
+        <main>
+            <!-- Lottie animation -->
+            <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+            <dotlottie-player  data-js="introimg"
+                src="https://lottie.host/ac7b7bb6-58e0-482c-b108-785bf3e1b083/XMCYZ3JNmK.json" 
+                background="transparent" 
+                speed="1" 
+                style="width: 450; height: 450" direction="1" playMode="normal" loop autoplay>
+            </dotlottie-player>
+            <form action="index.html" method="post">
+                <input type="text"  maxlength="25" placeholder="What do you have to do?"/>
+                <!-- <button type="submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"/>
+                    </svg>
+                </button> -->
+            </form>
+
+            <div class="taskcontainer">
+                <ul>
+
+                </ul>
+            </div>
+
+        </main>
+        <script src="script.js"></script>
+
+    </body>
+</html>
