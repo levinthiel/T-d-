@@ -78,6 +78,8 @@ input {
 }
 button {
     background-color: var(--white);
+    font-family: 'todo';
+    font-weight: bold;
     color: var(--black);
     fill: var(--black   );
     padding: 0.75rem 1.5rem;
@@ -142,6 +144,19 @@ li.todo-item-done {
     list-style: none;
     color: var(--pink);
     text-align: center;
+}
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+}
+.save, .lists {
+    width: 150px;
+    justify-content: center;
 }
 @media only screen and (max-width: 780px) {
     .formuptop {

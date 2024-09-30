@@ -3,7 +3,7 @@ const form = document.querySelector("form");
 const todoList = document.querySelector("ul");
 const introimg = document.querySelector('[data-js="introimg"]');
 const clearlist = document.querySelector('[data-js="clearlistbutton"]');
-const motMSGli = document.querySelector('[data-js="newmotmsg"]');
+
 
 let toDoNumber = 0;
 
@@ -17,8 +17,9 @@ form.addEventListener("submit", (event) => {
     toDoNumber = toDoNumber + 1; //incrementation for number of todos
     event.preventDefault();
     
-    console.log(motMSGli)
+
     // if motivational message then remove it
+    const motMSGli = document.querySelector('[data-js="newmotmsg"]');
     if(motMSGli){
         motMSGli.remove();
     }
@@ -91,7 +92,13 @@ clearlist.addEventListener("click", () => {
 });
 
 //Motivational message ------------------------------------------------------------------------------
-const motMSGs = [" Wow your list is empty! Good work Buddy","Wow such empty, so productive!","list done!" ]
+const motMSGs = [
+    " Wow your list is empty! Good work Buddy",
+    "Wow such empty, so productive!",
+    "List done! Nice ;) ",
+    "Hey, you did it , bravo!",
+    "All done! nice"
+ ]
 
 
 // generate Motivational messages --------------------------------------------------------------------
